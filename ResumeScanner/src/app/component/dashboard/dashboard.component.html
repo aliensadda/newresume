@@ -1,0 +1,133 @@
+<main role="main" class="col-md-12 ml-sm-auto col-lg-12">
+  <div class="row">
+    <nav class="col-md-2 job-list sidebar padding-left-none padding-right-none">
+      <div class="sidebar-sticky">
+        <input type="text" class="form-control job-search" name="" id="" placeholder="Search">
+        <ul class="jobs">
+          <li *ngFor="let jobprofile of jobProDesc" class="job-profile"
+            (click)="onSelect(jobprofile)">{{jobprofile.job_profile}}</li>
+        </ul>
+      </div>
+    </nav>
+    <div class="offset-2 col-md-10">
+      <div class="row">
+        <div class="col-md-7">
+          <div class="card job-card mt-5 ml-4 mr-4">
+            <form #createForm="ngForm">
+              <div class="card-header job-title">
+                <input type="text" class="form-control job-text job-valid"
+                  value="{{selectedJobProfile}}" id="job_profile" name="job_profile"
+                  [(ngModel)]="jobData.job_profile" #job_profile="ngModel" placeholder="Job Title">
+                <span class="help-block-j" hidden>
+                  *Job Profile is required
+                </span>
+              </div>
+
+              <div class="card-body desc-body">
+                <textarea class="form-control desc-text  desc-valid" value="{{selectedJobDescription}}"
+                  id="job_description" name="job_description" [(ngModel)]="jobData.job_description"
+                  #job_description="ngModel" placeholder="Description should be atleast two sentences."></textarea>
+                <span class="help-block-d" hidden>
+                  *Job Description is required
+                </span>
+              </div>
+              <div class="card-footer desc-setting">
+                <div class="add">
+                  <button type="button" class="btn  desc-add">
+                    + Add
+                  </button>
+                </div>
+                <div class="add-save">
+                  <button type="submit" (click)="createJob(createForm.value)"
+                    class="btn job-save" disabled>Save</button>
+                </div>
+                <div class="edit">
+                  <button class="btn btn-warning desc-edit" disabled>Edit</button>
+                </div>
+                <div class="edit-save">
+                  <button type="submit" (click)="editJob(createForm.value)" [disabled]="createForm.invalid" class="btn editjob-save">
+                    Save
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-md-3 mt-5 files">
+          <div class="row">
+            <div class="multi-upload">
+              <label class="upload-label" for="upload-file">
+                <img src="assets/images/cloud-backup-up-arrow.svg" alt="" class="upload-image">
+                <p class="resume-count">Available Resumes: {{selectedResumeCount}}</p>
+                <p class="upload-text">Click to select file</p>
+              </label>
+              <input type="file" name="file" id="upload-file" disabled
+                (change)="handleFileInput($event)" multiple />
+              <br>
+              <button class="btn file-submit" hidden (click)="uploadFileToActivity()">
+                <span>
+                  <img src="assets/images/Upload.svg" alt="">
+                </span> Upload</button>
+              <br>
+              <button class="btn file-scan mt-4" (click)="scanJob()">
+                <span class="mr-2">
+                  <img src="assets/images/barcode.svg" alt="" class="scan-icon">
+                </span> Scan Resume</button>
+            </div>
+          </div>
+
+        </div>
+        <div class="img-upload">
+          <span class="loader-img"><img src="../../../assets/images/Ball-1s-200px.svg"></span>
+          <p>Loading........</p>
+        </div>
+
+        <div class="alert alert-success ">
+          <button type="button" class="close" data-dismiss="alert"></button>
+          <strong class="message"></strong>
+        </div>
+        <div class="alert alert-danger ">
+          <button type="button" class="close" data-dismiss="alert"></button>
+          <strong class="message"></strong>
+        </div>
+      </div>
+
+      <div class="row my-5">
+        <div class="col-md-12">
+          <a class="download-pdf-link" #downloadPdfLink hidden></a>
+          <table class="table">
+            <thead>
+              <tr class="table-head">
+                <th>Name</th>
+                <th>Email</th>
+                <th>Contact No</th>
+                <th>Score</th>
+                <th>Download</th>
+                <th>Preview</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let x of scannedData['data']" class="table-row">
+                <td class="truncate">{{x.name}}</td>
+                <td>{{x.email}}</td>
+                <td>{{x.phone}}</td>
+                <td class="score" [ngClass]="{'bg-green': x.score >= scannedData.colour_value, 'bg-orange': x.score < scannedData.colour_value}">{{x.score.toFixed(2)}}</td>
+                <td>
+                  <i class="fa fa-cloud-download" aria-hidden="true"
+                    (click)="downloadPdf(x, false)"></i>
+                </td>
+                <td>
+                  <i class="fa fa-file-pdf-o" aria-hidden="true"
+                    (click)="downloadPdf(x, true)"></i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</main>

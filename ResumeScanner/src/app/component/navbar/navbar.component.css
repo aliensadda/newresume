@@ -1,0 +1,18 @@
+nav{
+    height: 3.3em;
+    background-color: #36547D;
+    box-shadow: 0 8px 6px -6px #ccc;
+}
+
+.download-icon{
+    float: right;
+    /* margin-top: 20px; */
+    margin-right: 20px;
+    cursor: pointer;
+    color:rgb(252, 246, 246);
+}
+
+.download-zip-link {
+    display: none;
+}
+

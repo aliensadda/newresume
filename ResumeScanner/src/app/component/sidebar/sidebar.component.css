@@ -1,0 +1,16 @@
+.sidebar{
+    height: 100vh;
+    position: fixed;
+    background-color: #fff;
+    width: 12.2em;
+}
+.padding-left-none{
+    padding-left: 0 !important;
+}
+.padding-right-none{
+    padding-right:0 !important;
+}
+
+.br-none{
+    border-radius: 0 !important;
+}

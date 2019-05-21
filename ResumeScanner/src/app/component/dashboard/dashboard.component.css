@@ -1,0 +1,314 @@
+
+.add-job{
+    background-color: #28D8B3;
+    margin-left: 2.3em;
+    color: white;
+    font-weight: bold;
+}
+
+.upload-label {
+   cursor: pointer;
+   background-color: #fff;
+   color: black;
+   padding: 8px;
+   border-radius: none;
+   width: 300px;
+   height: 219px;
+   text-align: center;
+   position: relative;
+   /* top: 8.6%; */
+}
+
+#upload-file {
+   opacity: 0;
+   position: absolute;
+   z-index: -1;
+   width: 50px;
+}
+
+.upload-text{
+    position: absolute;
+    top: 80%;
+    left: 30%;
+}
+
+.padding-left-none{
+    padding-left: 0 !important;
+}
+.padding-right-none{
+    padding-right:0 !important;
+}
+
+/* .job-card{
+    height: 314px;
+} */
+
+.desc-body{
+    height: 200px;
+}
+
+.desc-text{
+    height: 150px;
+}
+
+.job-list{
+    background-color: #fff;
+    /* color: white; */
+    width: 12.2em;
+    position: absolute;
+    height: 100%;
+}
+
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100; /* Behind the navbar */
+  padding: 0;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.sidebar-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 48px; /* Height of navbar */
+  height: calc(100vh - 48px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+
+.job-search{
+    border-radius: 100px !important;
+    margin-bottom: 10px;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.card{
+    border: 0;
+}
+.job-title{
+    background-color: #fff;
+    height: 4.8em;
+    border-bottom: 1px solid #EAEBEE;
+}
+
+.desc-setting{
+    height: 43px;
+    position: relative;
+    background-color: #fff;
+    border-top: 1px solid #EAEBEE;
+}
+
+.desc-add{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 15%;
+    background-color: #44d8b4;
+    border-color: #44d8b4;
+    border-radius: 0;
+    color:white;
+}
+.job-save{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 15%;
+    background-color: #53A3E0;
+    border-color: #53A3E0;
+    border-radius: 0;
+    color:white;
+}
+
+.desc-edit{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 15%;
+    
+    border-radius: 0;
+    color:white;
+}
+
+
+
+.file-submit{
+    width: 100%;
+    background-color: #28D8B3;
+    color: white;
+    margin-top: -5%;
+    border-radius: none;
+}
+
+.file-submit:disabled {
+    cursor: not-allowed;
+}
+
+.file-scan{
+    width: 100%;
+    background-color: #53A3E0;
+    color: white;
+    border-radius: 0;
+}
+
+.jobs{
+    padding-left: 0;
+    margin-bottom: 0;
+    /* overflow: scroll; */
+    height: 500px;
+}
+
+.job-profile{
+    list-style: none;
+    padding: 5px;
+    /* border-bottom: 1px solid #B2B2B2; */
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+}
+
+.selected{
+    background-color: #F2FFFC;
+    color: #fff;
+    border-left:1px solid #28D8B3;
+}
+
+.resume-count{
+    margin-bottom: 2.3rem;
+    position: absolute;
+    top: 65%;
+    left: 27%;
+}
+.upload-image{
+    position: absolute;
+    top: 30%;
+    left: 35%;
+}
+.active{
+    background-color: #36547d2b;
+     /* #F2FFFC */
+    font-weight: bold;
+    border-left: 2px solid #53A3E0;
+}
+
+.form-control[readonly] {
+    background-color: #ffffff;
+    opacity: 1;
+}
+
+.editjob-save{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 15%;
+    background-color: #53A3E0;
+    border-color: #53A3E0;
+    border-radius: 0;
+    color:white;
+}
+#toast-container > .toast-success{
+    background-image: none !important;
+    background: green !important;
+}
+
+.alert-success{
+    position: absolute;
+    top: 10px;
+    width: 300px;
+    right: 50%;
+}
+.img-upload{
+    position: absolute;
+    top: 75%;
+    width: 300px;
+    right: 50%;
+}
+
+.img-upload p {
+    position: absolute;
+    margin-top: -90px;
+    right: -55px;
+    font-size: 40px;
+    font-family: cursive;
+    font-weight: 200;
+    color: #ffc107
+}
+
+.help-block-j{
+    color: red;
+}
+
+.help-block-d{
+    color: red;
+}
+.desc-edit:disabled {
+    cursor: not-allowed;
+}
+
+#upload-file:disabled{
+    cursor: not-allowed;
+}
+.table-head th{
+    text-align: center;
+}
+
+.table-row{
+    background-color: #fff;
+}
+.table-row td{
+    width: 250px;
+    text-align: center;
+}
+
+.table-row td.truncate{
+    max-width: 150px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.fa-cloud-download{
+    width: 10px;
+    height: 10px;
+    color: #59D426;
+    cursor: pointer;
+}
+.fa-file-pdf-o{
+    color: red;
+    cursor: pointer;
+}
+
+.scan-icon{
+    height: 22px;
+}
+
+.bg-green {
+    background-color: #2fe12f;
+    color: white;
+    font-weight: bold;
+}
+
+.bg-orange {
+    background-color: #ffc107;
+    color: white;
+    font-weight: bold;
+}
+
+textarea{
+    resize: none;
+}
+
+.alert {
+    display: none;
+}
